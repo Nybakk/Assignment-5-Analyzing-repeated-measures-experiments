@@ -7,13 +7,20 @@ execute:
   warning: false  # Skjuler varselmeldinger
 editor_options: 
   chunk_output_type: console
+bibliography: references.bib
 ---
 
 # Effekten av treningsvolum på hypertrofi og styrke
 
-
 ## Introduksjon
 
+Menneskekroppen er relativt god til å tilpasse seg miljøet den lever i eller blir utsatt for. Ved økt treningsbelastning vil kroppen vår, særlig muskelen våre over tid tilpasse seg den økte belastningen ved å øke styrke og volum. Hvordan vi kan gjøre dette på mest mulig effektiv måte er ofte målet innenfor treningsfysiologisk forskning. Det er mange faktorer som spiller inn på hvordan og hvor raskt musklene våre tilpasser. Treningsvolum, antall sett, antall repetisjoner og pause mellom sett vil påvirke effekten av treningen. Det som vanligvis anbefales for hypertrofi er for eksempel moderat til høy motstand, høyt volum og korte pauser mellom sett. For å øke styrke er det vanlig å øke motstand, redusere volum og ha lengre pauser [@progress2009] [@schoenfeld2016]. Dette har trolig sammenheng med at trening med få repetisjoner til utmattelse kan bidra til bedre muskelaktivering [@ruple2023].
+
+Når det gjelder treningsvolum kan det se ut som at dette har en større betydning for hypertrofi enn for styrke. Ved trening av maksimal styrke vil man få stor effekt av relativt lavt treningsvolum. Økt treningsvolum vil føre til enda større økning i styrke, men ikke proposjonalt i forhold til treningsvolum. For hypertrofi er det derimot en mer proposjonal utvikling i forhold til treningsvolum [@schoenfeld2019]. Forkning gjort på godt trente idrettsutøvere tyder også på at større treningsvolum i styrketrening gir større økning i styrke, selv om dette ikke alltid er det lureste for konkurrende uttøvere på grunn av totalbelastningen [@naclerio2013].
+
+Som sagt gir også lavere treningsvolum gode resultater, og selv om det antagligvis er størst effekt med høyt treningsvolum er det i noen tilfeller er det vanskelig å bestemme hva som gir best resultat av høyt og lavt treningsvolum [@mitchell2012]. En metastudie fra 2019 foreslår at en enkelt set med 6-12 repetisjoner med motstand fra 70-85 % 1RM, 2-3 ganger per uke med høy intensitet (til utmattelse) kan over en periode på 8-12 uker gi en signifikant økning av maksimal styrke hos trente personer [@androulakis-korakakis2019].
+
+Målet med denne studien er å se hvordan forskjellig treningsvolum påvirker muskelhypertrofi og muskelstyrke hos relativt lite trente personer. Ut fra tidligere forskning osm jeg har presentert her vil det være naturlig å anta at trening med høyt volum vil gi bedre resultat enn trening med lavt volum. Det vil også være naturlig å anta at vi ser en større effekt på hypertrofi enn på muskulær styrke.
 
 ## Metode
 
@@ -21,15 +28,15 @@ editor_options:
 
 Alle deltakerne ble informert om potensiell risiko og ubehag studien kunne medføre og gav informert bekreftelse og godkjenning av dette i forkant av studieopptaket. Studiedesign var forhåndsregistrert (ClinicalTrials.gov Identifier: NCT02179307), og godkjent av den lokale etikk-komiteen ved Høgskolen i innlandet Lillehammer, avdeling for idrettsvitenskap (no. 2013-11-22:2) og alle prosedyrende ble gjennomført i henhold til *Helsinki-erklæringen*
 
-### Deltakere 
+### Deltakere
 
-41 menn og kvinner var med i denne studien. Alle deltakerne måtte være ikke-røykere mellom 18 og 40 år. For å kunne observere effekten av treningsintervensjonen best mulig kunne ikke deltakerne ha en treningshistorie med mer enn én økt med styrketrening per uke de siste 12 månedene opp til intervensjonen. Deltakerne kunne ikke ha redusert muskelstyrke som følge av tidligere eller nåværende skade av samme årsak, og de kunne ikke gå på faste medisiner da også disse kunne påvirke trenignseffekten. 
+41 menn og kvinner var med i denne studien. Alle deltakerne måtte være ikke-røykere mellom 18 og 40 år. For å kunne observere effekten av treningsintervensjonen best mulig kunne ikke deltakerne ha en treningshistorie med mer enn én økt med styrketrening per uke de siste 12 månedene opp til intervensjonen. Deltakerne kunne ikke ha redusert muskelstyrke som følge av tidligere eller nåværende skade av samme årsak, og de kunne ikke gå på faste medisiner da også disse kunne påvirke trenignseffekten.
 
 7 av deltakerne ble ekskludert fra data-analysen på grunn av at de ikke gjennomførte 85 % eller mer av de planlagte treningsøktene under intervensjonen. Årsakene var; ubehag eller smerte i underekstremitetene under trening (n = 5), skade urelatert til studiet (n = 1) og mislyktes i å følge protokollen (n = 1).
 
 Alle deltakerne meddelte tidligere erfaring med idrettsaktivitet (f.eks. lagsport, langrenn og turn). 20 av deltakerne meddelte at de jevnlig drev med fysisk aktivitet eller trening når de ble med i studien (ca. to ganger i uken), og 10 av disse utførte sporadiske styrketreningsøkter, men ikke mer enn en økt per uke.
 
-Deltakerne er beskrevet i @tbl-participants 
+Deltakerne er beskrevet i @tbl-participants
 
 ```{r}
 #| echo: false
@@ -73,14 +80,11 @@ exscidata::dxadata %>%
 
 ```
 
-
 ### Studie design
-
 
 #### Mål av muskelmasse (mål av regional lean mass)
 
 Muskeltverrsnitt av knestrekkerne (MTK; vastus lateralis, medialis, intermedius og rectus femoris) ble målt før og etter treningsintervensjonen ved hjelp av "*magnetic resonance imaging*" (MRI) i samsvar med produsentens protocol (S-Scan, Esaote Europe B.V., Maastricht, the Netherlands). Bildene ble analysert blindt av den samme teknikkeren ved hjelp av OsiriX (v.5.6, Pixmeo Sarl, Bernex, Switzerland). Tverrsnittet ble tatt med samme avstand til kneleddet og ved bruk av minst fire sammenhengende bilder (5 mm tykkelse, 10 mm atskillelse) hos alle deltakerne. Kroppssammensetnging hos deltakerne ble målt før og etter intervensjonen ved hjelp av "*Dual-energy x-ray absorptiometry*" (DXA) (Lunar Prodigy, GE Healthcare, Oslo, Norway), også dette i henhold til protokoll. I forkant av MRI- og DXA-målingen ble deltakerne bedt om å faste i minimum to timer før testing, og unngå hard fysisk aktivitet 48 timer føt testing. Etter siste treningsøkt under intervensjonen var det to dager til post-målingene med MRI og DXA.
-
 
 #### Mål av maksomal styrke
 
@@ -96,8 +100,9 @@ Styrkeøvelsene for bein ble utført i følgende rekkefølge; etbeins beinpress,
 
 For å tilpasse studien til deltakernes hverdag kunne noen økter gjennomføres uten oppsyn, men i gjennomsnitt ble 91 % av øktene gjennomført med oppsyn. for å holde oversikt over øktene uten oppsyn måtte deltakerne føre detaljerte ligger som gjennpom intervensjonen ble sjekket av forsker-teamet sammen med deltakeren.
 
-
 ### Dataanalyse og statestikk
+
+Alle data som blir presentert i denne rapporten er oppgitt i gjennomsnitt og standars avvik (mean (SD)) med mindre noe annet er spesifisert.
 
 All descriptive data are presented as mean and standard deviation (mean (SD)) unless otherwise stated. A priori sample-size calculations indicated that 40 participants was sufficient to detect ∼3 and 5 percentage-point differences in the primary outcomes, muscle cross-sectional area and maximal voluntary strength, respectively, between volume conditions. Sample-size calculations were based on a desired 80% power, assuming differences between volume condition corresponding to effect sizes of 0.47–0.51, as estimated from previous studies (Ronnestad et al. 2007; Mitchell et al. 2012). To assess the effect of volume conditions (number of sets) on muscle hypertrophy and strength, linear mixed-effects models (LMMs) were specified with relative changes from baseline as the dependent variable and number of sets as the main fixed effect. Baseline values were used as a co-variate together with sex. The interaction between sex and number of sets was explored for all hypertrophy and strength outcomes. Training effects on molecular characteristics (total RNA and western blot data) were also assessed using LMMs specified with time and the time to exercise–volume interaction as fixed effects. Models were specified with random intercepts for participants and when appropriate, random slopes for time and exercise volume at the level of participants. Model simplification was performed through reduction of random-effects parameters based on likelihood-ratio (LHR) tests. Plots of residual and fitted values were visually inspected to assess uniformity of variance over the fitted range. Whenever deviations from these assumptions were identified, data were log-transformed and models were re-fitted.
 
@@ -105,7 +110,7 @@ Generalised linear mixed-effects models (GLMMs) were used to fit muscle fibre di
 
 Tests against the null-hypotheses of no differences between volume conditions and no effect of time were performed on model-parameter estimates resulting from LMMs and GLMMs. LMMs were fitted using the nlme-package (Pinheiro & Bates, 2000), binomial GLMM models using the lme4-package (Bates et al. 2015) and beta GLMMs using the glmmTMB-package (Magnusson et al. 2019) written for R.
 
-To explore the determinants of the additional benefit of multiple-sets, dichotomous response variables were constructed from individual differences in single- and multiple-set outcomes in muscle hypertrophy (cross-sectional area, CSA) and average muscle strength. When the difference between volume conditions in training-induced outcomes were larger than the smallest worthwhile change (SWC) in the direction of the multiple-set, variables were coded as additional benefits of multiple-set. The SWC was calculated as between-participants SD × 0.2. To account for sex differences in CSA and strength measures, standard deviations were estimated from data mean-centred per sex. SWCs were expressed as percentages of the sex-specific mean and the averages thereof were used to classify benefits. For the combined strength variable, a weighted SWC was used in order to avoid underestimation of between-participant variability due to regression toward the mean. The probability of benefits of the multiple-set was related to a wide range of predictors using logistic regression. Prior to model fitting, a priori selection of relevant predictor variables was done; these included blood variables, baseline strength and muscle mass, volume-dependent molecular responses to training (i.e. total RNA content and S6K1 phosphorylation expressed as a percentage of single-set readouts) and baseline fibre-type composition. Two participants were excluded from variable selection due to missing data in selected variables. Purposeful selection of variables was done in a step-wise manner following Hosmer et al. (2013). First, each possible predictor was fitted into a univariate linear model, controlling for sex, providing estimation of the between-benefit groups difference for the variable of interest. Predictors with P < 0.20 from the first step were kept for further considerations. All predictors from the first step were fitted in a preliminary model from where predictors were sequentially removed if they were not significant at the P < 0.1 level using Wald-based P values or influenced other predictors. All predictors from the first step were checked for linearity (logit) by creating design variables and plotting each category median against coefficients from a logistic model. Non-linear variables were categorised into biologically meaningful categories (e.g. Vitamin D insufficient/sufficient), dichotomised based on measurement detection limits (testosterone in females) or sex-specific median values (e.g. lean body mass). Thirty-two participants were included in the variable selection as two participants had missing data in some of the pre-selected variables.
+To explore the determinants of the additional benefit of multiple-sets, dichotomous response variables were constructed from individual differences in single- and multiple-set outcomes in muscle hypertrophy (cross-sectional area, CSA) and average muscle strength. When the difference between volume conditions in training-induced outcomes were larger than the smallest worthwhile change (SWC) in the direction of the multiple-set, variables were coded as additional benefits of multiple-set. The SWC was calculated as between-participants SD × 0.2. To account for sex differences in CSA and strength measures, standard deviations were estimated from data mean-centred per sex. SWCs were expressed as percentages of the sex-specific mean and the averages thereof were used to classify benefits. For the combined strength variable, a weighted SWC was used in order to avoid underestimation of between-participant variability due to regression toward the mean. The probability of benefits of the multiple-set was related to a wide range of predictors using logistic regression. Prior to model fitting, a priori selection of relevant predictor variables was done; these included blood variables, baseline strength and muscle mass, volume-dependent molecular responses to training (i.e. total RNA content and S6K1 phosphorylation expressed as a percentage of single-set readouts) and baseline fibre-type composition. Two participants were excluded from variable selection due to missing data in selected variables. Purposeful selection of variables was done in a step-wise manner following Hosmer et al. (2013). First, each possible predictor was fitted into a univariate linear model, controlling for sex, providing estimation of the between-benefit groups difference for the variable of interest. Predictors with P \< 0.20 from the first step were kept for further considerations. All predictors from the first step were fitted in a preliminary model from where predictors were sequentially removed if they were not significant at the P \< 0.1 level using Wald-based P values or influenced other predictors. All predictors from the first step were checked for linearity (logit) by creating design variables and plotting each category median against coefficients from a logistic model. Non-linear variables were categorised into biologically meaningful categories (e.g. Vitamin D insufficient/sufficient), dichotomised based on measurement detection limits (testosterone in females) or sex-specific median values (e.g. lean body mass). Thirty-two participants were included in the variable selection as two participants had missing data in some of the pre-selected variables.
 
 Logistic models fitted with small samples have been shown to give biased estimates (Nemes et al. 2009); this was recognised and bias-corrected estimates were reported (Kosmidis, 2019) with P values from likelihood-ratio tests comparing sequentially reduced models.
 
@@ -115,9 +120,7 @@ The level of statistical significance was set to α = 0.05. All data-analysis wa
 
 Av 41 deltakere i studiet gjennomførte 34 hele treningsopplegget med valid post-test.
 
-
 ### Hypertrofi
-
 
 ```{r}
 #| echo: false
@@ -186,9 +189,7 @@ lean.mass.results <- paste0(estimate,
 
 ```
 
-
 the average difference in regional body mass change between sets conditions was `r lean.mass.results`
-
 
 ```{r}
 #| echo: false
@@ -218,9 +219,6 @@ dat %>%
 ```
 
 Forskjell på økning av muskelmasse etter intervensjon mellom singel og multiple sets
-
-
-
 
 ### Maksimal styrke
 
@@ -313,7 +311,7 @@ strength.test.results <- paste0(estimate2,
 
 ```
 
-the average difference in strength change in legpress between sets conditions was `r strength.test.results` 
+the average difference in strength change in legpress between sets conditions was `r strength.test.results`
 
 ```{r}
 #| echo: false
@@ -343,11 +341,4 @@ str_plot
 
 ```
 
-
-
 ## Diskusjon
-
-
-
-
-

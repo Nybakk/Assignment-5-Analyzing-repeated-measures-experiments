@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="Assignment-5-Analyzing-repeated-measures-experiments_files/libs/clipboard/clipboard.min.js"></script>
@@ -73,6 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Effekten av treningsvolum på hypertrofi og styrke</h1>
 <section id="introduksjon" class="level2">
 <h2 class="anchored" data-anchor-id="introduksjon">Introduksjon</h2>
+<p>Menneskekroppen er relativt god til å tilpasse seg miljøet den lever i eller blir utsatt for. Ved økt treningsbelastning vil kroppen vår, særlig muskelen våre over tid tilpasse seg den økte belastningen ved å øke styrke og volum. Hvordan vi kan gjøre dette på mest mulig effektiv måte er ofte målet innenfor treningsfysiologisk forskning. Det er mange faktorer som spiller inn på hvordan og hvor raskt musklene våre tilpasser. Treningsvolum, antall sett, antall repetisjoner og pause mellom sett vil påvirke effekten av treningen <span class="citation" data-cites="progress2009">(<a href="#ref-progress2009" role="doc-biblioref"><span>“Progression Models in Resistance Training for Healthy Adults”</span> 2009</a>)</span></p>
 </section>
 <section id="metode" class="level2">
 <h2 class="anchored" data-anchor-id="metode">Metode</h2>
@@ -94,23 +115,23 @@ Table&nbsp;1: Deltakeroversikt
 </figcaption>
 <div aria-describedby="tbl-participants-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qussqzqlnz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qussqzqlnz table {
+<div id="epnqlnllqc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#epnqlnllqc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qussqzqlnz thead, #qussqzqlnz tbody, #qussqzqlnz tfoot, #qussqzqlnz tr, #qussqzqlnz td, #qussqzqlnz th {
+#epnqlnllqc thead, #epnqlnllqc tbody, #epnqlnllqc tfoot, #epnqlnllqc tr, #epnqlnllqc td, #epnqlnllqc th {
   border-style: none;
 }
 
-#qussqzqlnz p {
+#epnqlnllqc p {
   margin: 0;
   padding: 0;
 }
 
-#qussqzqlnz .gt_table {
+#epnqlnllqc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -136,12 +157,12 @@ Table&nbsp;1: Deltakeroversikt
   border-left-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_caption {
+#epnqlnllqc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qussqzqlnz .gt_title {
+#epnqlnllqc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -153,7 +174,7 @@ Table&nbsp;1: Deltakeroversikt
   border-bottom-width: 0;
 }
 
-#qussqzqlnz .gt_subtitle {
+#epnqlnllqc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -165,7 +186,7 @@ Table&nbsp;1: Deltakeroversikt
   border-top-width: 0;
 }
 
-#qussqzqlnz .gt_heading {
+#epnqlnllqc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -177,13 +198,13 @@ Table&nbsp;1: Deltakeroversikt
   border-right-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_bottom_border {
+#epnqlnllqc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_col_headings {
+#epnqlnllqc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -198,7 +219,7 @@ Table&nbsp;1: Deltakeroversikt
   border-right-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_col_heading {
+#epnqlnllqc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -218,7 +239,7 @@ Table&nbsp;1: Deltakeroversikt
   overflow-x: hidden;
 }
 
-#qussqzqlnz .gt_column_spanner_outer {
+#epnqlnllqc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -230,15 +251,15 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 4px;
 }
 
-#qussqzqlnz .gt_column_spanner_outer:first-child {
+#epnqlnllqc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qussqzqlnz .gt_column_spanner_outer:last-child {
+#epnqlnllqc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qussqzqlnz .gt_column_spanner {
+#epnqlnllqc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -250,11 +271,11 @@ Table&nbsp;1: Deltakeroversikt
   width: 100%;
 }
 
-#qussqzqlnz .gt_spanner_row {
+#epnqlnllqc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qussqzqlnz .gt_group_heading {
+#epnqlnllqc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -280,7 +301,7 @@ Table&nbsp;1: Deltakeroversikt
   text-align: left;
 }
 
-#qussqzqlnz .gt_empty_group_heading {
+#epnqlnllqc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -295,15 +316,15 @@ Table&nbsp;1: Deltakeroversikt
   vertical-align: middle;
 }
 
-#qussqzqlnz .gt_from_md > :first-child {
+#epnqlnllqc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qussqzqlnz .gt_from_md > :last-child {
+#epnqlnllqc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qussqzqlnz .gt_row {
+#epnqlnllqc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -322,7 +343,7 @@ Table&nbsp;1: Deltakeroversikt
   overflow-x: hidden;
 }
 
-#qussqzqlnz .gt_stub {
+#epnqlnllqc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -335,7 +356,7 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 5px;
 }
 
-#qussqzqlnz .gt_stub_row_group {
+#epnqlnllqc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -349,15 +370,15 @@ Table&nbsp;1: Deltakeroversikt
   vertical-align: top;
 }
 
-#qussqzqlnz .gt_row_group_first td {
+#epnqlnllqc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qussqzqlnz .gt_row_group_first th {
+#epnqlnllqc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qussqzqlnz .gt_summary_row {
+#epnqlnllqc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -367,16 +388,16 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 5px;
 }
 
-#qussqzqlnz .gt_first_summary_row {
+#epnqlnllqc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_first_summary_row.thick {
+#epnqlnllqc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qussqzqlnz .gt_last_summary_row {
+#epnqlnllqc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -386,7 +407,7 @@ Table&nbsp;1: Deltakeroversikt
   border-bottom-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_grand_summary_row {
+#epnqlnllqc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -396,7 +417,7 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 5px;
 }
 
-#qussqzqlnz .gt_first_grand_summary_row {
+#epnqlnllqc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -406,7 +427,7 @@ Table&nbsp;1: Deltakeroversikt
   border-top-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_last_grand_summary_row_top {
+#epnqlnllqc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -416,11 +437,11 @@ Table&nbsp;1: Deltakeroversikt
   border-bottom-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_striped {
+#epnqlnllqc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qussqzqlnz .gt_table_body {
+#epnqlnllqc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -429,7 +450,7 @@ Table&nbsp;1: Deltakeroversikt
   border-bottom-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_footnotes {
+#epnqlnllqc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -443,7 +464,7 @@ Table&nbsp;1: Deltakeroversikt
   border-right-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_footnote {
+#epnqlnllqc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -452,7 +473,7 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 5px;
 }
 
-#qussqzqlnz .gt_sourcenotes {
+#epnqlnllqc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -466,7 +487,7 @@ Table&nbsp;1: Deltakeroversikt
   border-right-color: #D3D3D3;
 }
 
-#qussqzqlnz .gt_sourcenote {
+#epnqlnllqc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -474,72 +495,72 @@ Table&nbsp;1: Deltakeroversikt
   padding-right: 5px;
 }
 
-#qussqzqlnz .gt_left {
+#epnqlnllqc .gt_left {
   text-align: left;
 }
 
-#qussqzqlnz .gt_center {
+#epnqlnllqc .gt_center {
   text-align: center;
 }
 
-#qussqzqlnz .gt_right {
+#epnqlnllqc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qussqzqlnz .gt_font_normal {
+#epnqlnllqc .gt_font_normal {
   font-weight: normal;
 }
 
-#qussqzqlnz .gt_font_bold {
+#epnqlnllqc .gt_font_bold {
   font-weight: bold;
 }
 
-#qussqzqlnz .gt_font_italic {
+#epnqlnllqc .gt_font_italic {
   font-style: italic;
 }
 
-#qussqzqlnz .gt_super {
+#epnqlnllqc .gt_super {
   font-size: 65%;
 }
 
-#qussqzqlnz .gt_footnote_marks {
+#epnqlnllqc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qussqzqlnz .gt_asterisk {
+#epnqlnllqc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qussqzqlnz .gt_indent_1 {
+#epnqlnllqc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qussqzqlnz .gt_indent_2 {
+#epnqlnllqc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qussqzqlnz .gt_indent_3 {
+#epnqlnllqc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qussqzqlnz .gt_indent_4 {
+#epnqlnllqc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qussqzqlnz .gt_indent_5 {
+#epnqlnllqc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qussqzqlnz .katex-display {
+#epnqlnllqc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qussqzqlnz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#epnqlnllqc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -645,12 +666,17 @@ Figure&nbsp;2: Styrkeforandring i legpress fra pre- til postintervensjon hos man
 </div>
 </section>
 </section>
-<section id="diskusjon" class="level2">
-<h2 class="anchored" data-anchor-id="diskusjon">Diskusjon</h2>
+<section id="diskusjon" class="level2 unnumbered">
+
+
 </section>
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Diskusjon</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-progress2009" class="csl-entry" role="listitem">
+<span>“Progression Models in Resistance Training for Healthy Adults.”</span> 2009. <em>Medicine &amp; Science in Sports &amp; Exercise</em> 41 (3): 687–708. <a href="https://doi.org/10.1249/mss.0b013e3181915670">https://doi.org/10.1249/mss.0b013e3181915670</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
