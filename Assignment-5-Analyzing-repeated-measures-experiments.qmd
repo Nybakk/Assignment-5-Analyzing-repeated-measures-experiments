@@ -102,19 +102,9 @@ For å tilpasse studien til deltakernes hverdag kunne noen økter gjennomføres 
 
 ### Dataanalyse og statestikk
 
-Alle data som blir presentert i denne rapporten er oppgitt i gjennomsnitt og standars avvik (mean (SD)) med mindre noe annet er spesifisert.
+Alle data som blir presentert i denne rapporten er oppgitt i gjennomsnitt og standars avvik (mean (SD)) med mindre noe annet er spesifisert. For å se på hvordan forskjellig volum påvirker hypertrofi og styrke har vi regnet ut den gjennomsnitlige forskjellen i endring mellom singel-set-protokoll (SSP) og multiple-set-protokoll (MSP). Disse dataene blir også visualiser i modeller i resultatdelen. Modellene viser hva slags utvikling deltakerne hadde fra SSP og MSP.
 
-All descriptive data are presented as mean and standard deviation (mean (SD)) unless otherwise stated. A priori sample-size calculations indicated that 40 participants was sufficient to detect ∼3 and 5 percentage-point differences in the primary outcomes, muscle cross-sectional area and maximal voluntary strength, respectively, between volume conditions. Sample-size calculations were based on a desired 80% power, assuming differences between volume condition corresponding to effect sizes of 0.47–0.51, as estimated from previous studies (Ronnestad et al. 2007; Mitchell et al. 2012). To assess the effect of volume conditions (number of sets) on muscle hypertrophy and strength, linear mixed-effects models (LMMs) were specified with relative changes from baseline as the dependent variable and number of sets as the main fixed effect. Baseline values were used as a co-variate together with sex. The interaction between sex and number of sets was explored for all hypertrophy and strength outcomes. Training effects on molecular characteristics (total RNA and western blot data) were also assessed using LMMs specified with time and the time to exercise–volume interaction as fixed effects. Models were specified with random intercepts for participants and when appropriate, random slopes for time and exercise volume at the level of participants. Model simplification was performed through reduction of random-effects parameters based on likelihood-ratio (LHR) tests. Plots of residual and fitted values were visually inspected to assess uniformity of variance over the fitted range. Whenever deviations from these assumptions were identified, data were log-transformed and models were re-fitted.
-
-Generalised linear mixed-effects models (GLMMs) were used to fit muscle fibre distributions and gene family-normalised myosin heavy-chain mRNA data (Ellefsen et al. 2014b; after transformation to transcript counts as described by Matz et al. 2013) using the fixed and random effects structure specified above for molecular characteristics. A binomial variance/link function (logit-link) was used for muscle fibre distributions with the number of counted fibres per sample used as weights to account for sample size. A beta variance/link-function (logit-link) was used to model gene family-normalised myosin heavy-chain mRNA data. This was done in order to account for the non-normal nature of relative fibre-type/myosin-isoform distribution data, where specific fibres/transcripts are analysed as a proportion of the total number of fibres/transcripts in each sample and thus bound between 0 and 1. The beta model was used for gene-family mRNA data as the denominator could be regarded as arbitrary. Gene-abundance data, either expressed as per total RNA or per unit muscle weight using the external reference gene were analysed through the modelling of gene sets as suggested by Matz et al. (2013) using mixed linear models with within-model normalisation through the addition of random effects of technical replicates. To allow for gene-specific variances, variance functions were specified per strata (per gene) (Pinheiro & Bates, 2000). RNA integrity scores (RQI) were included in the model on a per target basis to control for RNA degradation.
-
-Tests against the null-hypotheses of no differences between volume conditions and no effect of time were performed on model-parameter estimates resulting from LMMs and GLMMs. LMMs were fitted using the nlme-package (Pinheiro & Bates, 2000), binomial GLMM models using the lme4-package (Bates et al. 2015) and beta GLMMs using the glmmTMB-package (Magnusson et al. 2019) written for R.
-
-To explore the determinants of the additional benefit of multiple-sets, dichotomous response variables were constructed from individual differences in single- and multiple-set outcomes in muscle hypertrophy (cross-sectional area, CSA) and average muscle strength. When the difference between volume conditions in training-induced outcomes were larger than the smallest worthwhile change (SWC) in the direction of the multiple-set, variables were coded as additional benefits of multiple-set. The SWC was calculated as between-participants SD × 0.2. To account for sex differences in CSA and strength measures, standard deviations were estimated from data mean-centred per sex. SWCs were expressed as percentages of the sex-specific mean and the averages thereof were used to classify benefits. For the combined strength variable, a weighted SWC was used in order to avoid underestimation of between-participant variability due to regression toward the mean. The probability of benefits of the multiple-set was related to a wide range of predictors using logistic regression. Prior to model fitting, a priori selection of relevant predictor variables was done; these included blood variables, baseline strength and muscle mass, volume-dependent molecular responses to training (i.e. total RNA content and S6K1 phosphorylation expressed as a percentage of single-set readouts) and baseline fibre-type composition. Two participants were excluded from variable selection due to missing data in selected variables. Purposeful selection of variables was done in a step-wise manner following Hosmer et al. (2013). First, each possible predictor was fitted into a univariate linear model, controlling for sex, providing estimation of the between-benefit groups difference for the variable of interest. Predictors with P \< 0.20 from the first step were kept for further considerations. All predictors from the first step were fitted in a preliminary model from where predictors were sequentially removed if they were not significant at the P \< 0.1 level using Wald-based P values or influenced other predictors. All predictors from the first step were checked for linearity (logit) by creating design variables and plotting each category median against coefficients from a logistic model. Non-linear variables were categorised into biologically meaningful categories (e.g. Vitamin D insufficient/sufficient), dichotomised based on measurement detection limits (testosterone in females) or sex-specific median values (e.g. lean body mass). Thirty-two participants were included in the variable selection as two participants had missing data in some of the pre-selected variables.
-
-Logistic models fitted with small samples have been shown to give biased estimates (Nemes et al. 2009); this was recognised and bias-corrected estimates were reported (Kosmidis, 2019) with P values from likelihood-ratio tests comparing sequentially reduced models.
-
-The level of statistical significance was set to α = 0.05. All data-analysis was done in R (R Core Team, 2018).
+Testing mot null-hypotesen om at det ikke vil være noen forskjell på treningseffekten fra SSP og MSP ble gjort i R ved hjelp av lme4-pakken [@lme4]. Grensen for statistisk signifikans ble satt til α = 0.05. All data-analyse ble gjort i R [@R].
 
 ## Resultat
 
@@ -189,14 +179,14 @@ lean.mass.results <- paste0(estimate,
 
 ```
 
-the average difference in regional body mass change between sets conditions was `r lean.mass.results`
+Den gjennomsnitlige forskjellen i muskelmasseendring i lår mellom sett-protokollene var `r lean.mass.results`
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 #| label: fig-lean-body-mass
-#| fig-cap: "Forandring av muskelmasse fra pre- til post-intervensjon hos manlige og kvinnelige deltakere"
+#| fig-cap: "Forskjell på endring av muskelmasse under intervensjonen mellom SSP og MSP hos manlige og kvinnelige deltakere"
 
 
 library(ggtext)
@@ -311,14 +301,14 @@ strength.test.results <- paste0(estimate2,
 
 ```
 
-the average difference in strength change in legpress between sets conditions was `r strength.test.results`
+Den gjennomsnitlige forskjellen i muskelstyrkeendring i beinpress mellom sett-protokollene var `r strength.test.results`
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 #| label: fig-strength-test
-#| fig-cap: "Styrkeforandring i legpress fra pre- til postintervensjon hos mannlige og kvinnelige deltakere"
+#| fig-cap: "Forskjell på endring i styrke i legpress under intervensjon mellom SSP og MSP hos mannlige og kvinnelige deltakere"
 
 
 library(ggtext)
@@ -342,3 +332,5 @@ str_plot
 ```
 
 ## Diskusjon
+
+tolke resultat og data
