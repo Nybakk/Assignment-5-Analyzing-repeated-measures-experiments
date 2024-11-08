@@ -1,0 +1,326 @@
+---
+title: "Assignment 5: Analyzing repeated measures experiments"
+author: "Anders Nybakk"
+format: html
+code-fold: true
+execute:
+  warning: false  # Skjuler varselmeldinger
+editor_options: 
+  chunk_output_type: console
+---
+
+# Effekten av treningsvolum på hypertrofi og styrke
+
+
+## Introduksjon
+
+
+## Metode
+
+
+### Deltakere
+
+Deltakerne er beskrevet i @tbl-participants 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-participants
+#| tbl-cap: "Participant characteristics"
+
+
+library(tidyverse); library(exscidata); library(gt)
+
+exscidata::dxadata %>%
+  filter(time == "pre",
+         include == "incl") %>%
+  select(participant, sex, age, height, weight) %>%
+  pivot_longer(names_to = "variable",
+               values_to = "value",
+               cols = age:weight) %>%
+  summarise(.by = c(sex, variable),
+            m = mean(value),
+            s = sd(value),
+            n = n()) %>%
+  
+  mutate(sex = if_else(sex == "male", "Male", "Female"),
+         sex = paste0(sex, " n = ", n),
+         stat = paste0(round(m, 1),
+                       " (",
+                       round(s, 1),
+                       ")")) %>%
+  dplyr::select(sex, variable, stat) %>%
+  pivot_wider(names_from = variable,
+              values_from = stat) %>%
+  
+  gt() %>%
+  cols_label(sex = "",
+             age = "Age (years)",
+             weight = "Body mass (kg)",
+             height = "Stature (cm)")
+
+
+
+```
+
+
+### Studie design
+
+
+#### Mål av muskelmasse (mål av regional lean mass)
+
+Knee-extensor muscle cross-sectional area (CSA; vastus lateralis, medialis, intermedius and rectus femoris) was determined before and after the training intervention using magnetic resonance imaging (MRI) in accordance with the manufacturer's protocol (S-Scan, Esaote Europe B.V., Maastricht, the Netherlands). Images were analysed in a blinded fashion by the same investigator, using OsiriX (v.5.6, Pixmeo Sarl, Bernex, Switzerland). For each participant, CSA was determined at the same distance from the knee joint pre- and post-intervention (mid-thigh), using at least four consecutive images (5 mm thickness, 10 mm separation; see Fig. 2A for representative images). Body composition was determined before and after the intervention using dual-energy X-ray absorptiometry (DXA) (Lunar Prodigy, GE Healthcare, Oslo, Norway), in accordance with standard protocol. Prior to MRI and DXA measurements, participants were asked to stay fasted for 2 h and to refrain from vigorous physical activity for 48 h. Two days separated the last strength test session from body composition measurements.
+
+#### Mål av maksomal styrke
+
+Maximal strength was assessed as one repetition maximum (1RM) in unilateral leg press and knee extension. The test session for each exercise started with a specific warm-up consisting of 10, 6 and 3 repetitions at 50, 75 and 85% of the anticipated maximum. Thereafter, 1RM was found by increasing the resistance progressively until the weight could not be lifted through the full range of motion. For each exercise, the highest load successfully attempted was defined as 1RM. Each participant was given four to six attempts.
+
+#### Treningsprotokoll
+
+12 uker trening
+
+
+### Dataanalyse og statestikk
+
+
+## Resultat
+
+Av nn deltakere i studiet gjennomførte nn hele treningsopplegget med valid post-test.
+
+
+### Hypertrofi
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+library(tidyverse); library(exscidata); library(lme4)
+
+# Load data
+dat <- dxadata %>%
+  select(participant:include, lean.left_leg, lean.right_leg) %>%
+        
+        # Extract leg specific data
+  pivot_longer(names_to = "leg", 
+               values_to = "lean.mass", 
+               cols = lean.left_leg:lean.right_leg) %>%
+  mutate(leg = if_else(leg == "lean.left_leg", "L", "R"), 
+         sets = if_else(multiple == leg, "multiple", "single")) %>%
+  select(participant, time, sex, include, sets, leg, lean.mass) %>%
+        # Filter only included participants
+        filter(include == "incl") %>%
+        # Make data set wider by time 
+        
+        pivot_wider(names_from = "time", 
+                    values_from = "lean.mass") %>%
+        # Calculate change score
+        
+        mutate(change = post - pre) %>%
+        
+        # Keep change score and make it wider by sets
+        select(participant:sets, change) %>%
+        pivot_wider(names_from = sets, values_from = change) 
+
+
+t_results <- with(dat, t.test(multiple, single, paired = TRUE))
+
+
+
+####### 
+
+## write up the t-test
+
+pval <- round(t_results$p.value, 3)
+
+tval <- round(t_results$statistic, 2)
+
+df <- t_results$parameter
+
+cil <- round(t_results$conf.int[1], 1)
+ciu <- sprintf("%.1f", round(t_results$conf.int[2], 1))
+
+estimate <- round(t_results$estimate, 1)
+
+
+lean.mass.results <- paste0(estimate,
+                            "95g CI: [",
+                            cil,
+                            ",",
+                            ciu,
+                            "], *p*-value =",
+                            pval, 
+                            ", t<sub>",
+                            df, "</sub> =",
+                            tval, ")")
+
+```
+
+
+the average difference in regional body mass change between sets conditions was `r lean.mass.results`
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-lean-body-mass
+#| fig-cap: "Forandring av muskelmasse fra pre- til post-intervensjon hos manlige og kvinnelige deltakere"
+
+
+library(ggtext)
+
+dat %>%
+  pivot_longer(names_to = "sets",
+               values_to = "lbm",
+               cols = multiple:single) %>%
+  
+  mutate(sets = factor(sets, levels = c("single", "multiple"))) %>%
+  
+  ggplot(aes(sets, lbm, group = participant, color = sex)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "sets",
+       color = "kj&oslash;nn") +
+  theme(legend.title = element_markdown())
+
+
+```
+
+Forskjell på økning av muskelmasse etter intervensjon mellom singel og multiple sets
+
+
+
+
+### Maksimal styrke
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+
+## exploratory plot of strenght data
+
+str <- strengthvolume %>%
+  filter(include == "incl") %>%
+  filter(time == "pre" | time == "post") %>%
+  filter(exercise == "legpress") %>%
+  mutate(time = factor(time, levels = c("pre", "post"))) 
+
+  
+
+str_pre_post <- str %>%
+  mutate(time = if_else(time %in% c("pre", "session1"), "pre", time)) %>%
+ 
+  
+  filter(time %in% c("pre", "post")) %>% 
+    summarise(load = max(load, na.rm = TRUE),
+              .by = c(participant,
+                      sex,
+                      time,
+                      sets,
+                      exercise,
+                      leg)) %>%
+    filter_all(all_vars(!is.infinite(.))) 
+
+
+# view the summary data
+
+
+str_change <- str_pre_post %>%
+  pivot_wider(names_from = time, values_from = load) %>%
+  mutate(change = post - pre) %>%
+  
+  select(participant, sex, sets, exercise, change) %>%
+  pivot_wider(names_from = sets,
+              values_from = change) %>%
+  
+  mutate(diff = multiple - single) 
+  
+ 
+
+str_tst <- str_change %>%
+  filter(exercise == "legpress") %>%
+  select(participant, sex, single, multiple, diff) 
+
+
+
+
+t_results2 <- t.test(str_tst$multiple, str_tst$single, paired = TRUE)
+
+
+
+####### 
+
+## write up the t-test
+
+pval2 <- round(t_results2$p.value, 3)
+
+tval2 <- round(t_results2$statistic, 2)
+
+df2 <- t_results2$parameter
+
+cil2 <- round(t_results2$conf.int[1], 1)
+ciu2 <- sprintf("%.1f", round(t_results2$conf.int[2], 1))
+
+estimate2 <- round(t_results2$estimate, 1)
+
+
+strength.test.results <- paste0(estimate2,
+                            "95kg CI: [",
+                            cil2,
+                            ",",
+                            ciu2,
+                            "], *p*-value =",
+                            pval2, 
+                            ", t<sub>",
+                            df2, "</sub> =",
+                            tval2, ")")
+
+
+
+```
+
+the average difference in strength change in legpress between sets conditions was `r strength.test.results` 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-strength-test
+#| fig-cap: "Styrkeforandring i legpress fra pre- til postintervensjon hos mannlige og kvinnelige deltakere"
+
+
+library(ggtext)
+
+str_plot <- str_tst %>%
+  pivot_longer(names_to = "sets",
+               values_to = "strength",
+               cols = multiple:single) %>%
+  
+  mutate(sets = factor(sets, levels = c("single", "multiple"))) %>%
+  
+  ggplot(aes(sets, strength, group = participant, color = sex)) +
+  geom_line() +
+  geom_point() +
+  labs(x = "sets",
+       color = "kj&oslash;nn") +
+  theme(legend.title = element_markdown())
+
+str_plot
+
+```
+
+
+
+## Diskusjon
+
+
+
+
+
