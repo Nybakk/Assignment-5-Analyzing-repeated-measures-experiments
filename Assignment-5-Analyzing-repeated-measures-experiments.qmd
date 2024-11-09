@@ -337,7 +337,13 @@ str_plot
 
 ## Diskusjon
 
-tolke resultat og data
+I dette studiet fikk deltakerne en større økning i muskelmasse ved å følge treningsprotokoll med flere sett (MSP) enn med et enkelt sett (SSP). Dette stemmer over ens med anbefalingene fra [@progress2009] og funnene til [@schoenfeld2016]. Det som er overesakende i denne studien er at det ikke var stor nok forskjell til å si at funnet er statistisk signifikant med en *p*-verdi på 0.036. Fra tabellen kunne vi også se at noen deltakere ikke bare responderte like godt på SSP som MSP, men faktisk bedre. Selv om vi ser en tendens til at det i gjennomsnitt gir bedre effekt av MSP enn SSp kan vi altså ikke konkludere med dette ut fra denne studien. 
+
+Vi får litt samme resultat i resultane for muskelstyrkeøknin (1RM). Også her viser er det i gjennomsnitt en større økning i styrke ved MSP enn ved SSP, men *p*-verdien er enda lavere på 0,025, Så igjen er ikke funnene signifikante. På styrke kan vi se at det er enda mindre forskjell på effekten av SSP og MSP. Dette stemmer overens med studien til [@mitchell2012] om at det kan være vanskelig å si hva som gir best effekt av høyt og lavt treningsvolum.
+
+Selv om vi ser en tendens i denne studien til at det totale utbyttet av MSP er større enn SSP, er ikke forskjellen stor nok til å motbevise null-hypotesen om at det ikke er noen forksjell. Den tendensen vi kan se stemmer likevel med studien til [@schoenfeld2019], hvor de sier at treningsvolum er viktigere for hypertrofi enn for muskelstyrke. Så kan vi likevel bruke funnene? [@naclerio2013] sier i sin studie at selv om økt treningsvolum gir noe bedre effekt er ikke dette alltid anbefalt for konkurrenrende utøvere på grunn av det høye totalvolumet. Kanskje kan en liknende anbefaling gjelde for utrente personer slik som deltakerne i denne studien. Denne studien tyder på at lavt treningsvolum ikke har noen signifikant dårligere effekt en høyt treningsvolum. At et sett per øvelse gir nesten like godt resultat som tre vil være godt nytt for personer som sliter med motivasjon eller som ikke liker styrketrening. Dette kan være svært postitiv i et folkehelseperspektiv for å motivere flere til å trene og holde seg i form med litt trening. Dette stemmer også med meta-studien gjort av [@androulakis-korakakis2019].
+ 
+Vi kan altså ikke komme med noen klar konklusjon i denne studien. Det var noe overraskende at hypotesen ikke stemte, spesielt med tanke på hypertrofi. Det kan tenkes at det er en forskjell på trente og godt trente i en slik situasjon så mer forskning innenfor dette feltet er nok nødvendig. Selv om hypotesen ikke stemte kan det som sagt likevel være positivt med tanke på folkehelse.
 
 
 
