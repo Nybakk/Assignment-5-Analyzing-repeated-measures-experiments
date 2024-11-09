@@ -108,7 +108,7 @@ Testing mot null-hypotesen om at det ikke vil være noen forskjell på treningse
 
 ## Resultat
 
-Av 41 deltakere i studiet gjennomførte 34 hele treningsopplegget med valid post-test.
+Av 41 deltakere i studiet gjennomførte 34 hele treningsopplegget og hvis resultater er med i følgende beregninger
 
 ### Hypertrofi
 
@@ -144,9 +144,11 @@ dat <- dxadata %>%
         # Keep change score and make it wider by sets
         select(participant:sets, change) %>%
         pivot_wider(names_from = sets, values_from = change) 
+  
 
 
-t_results <- with(dat, t.test(multiple, single, paired = TRUE))
+t_results <- with(dat, t.test(multiple, single, paired = TRUE)) 
+  
 
 
 
@@ -179,7 +181,9 @@ lean.mass.results <- paste0(estimate,
 
 ```
 
-Den gjennomsnitlige forskjellen i muskelmasseendring i lår mellom sett-protokollene var `r lean.mass.results`
+Etter 12 uker med styrketrening har det alt i alt vært en økning av muskelmasse og som forventet har det vært en større økning i muskelmasse vet bruk av flere sett under treningen (MSP) enn et enkelt sett (SSP). Den gjennomsnitlige forskjellen i muskelmasseendring i lår mellom sett-protokollene var `r lean.mass.results` (95% konfidensintertvall). 
+
+Tabellen @fig-lean-body-mass viser hva slags utvikling hver enkelt deltaker har hatt i løpet av intervensjonen og forskjellen på økning av muskelmasse mellom SSP og MSP. Her kan vi se at de fleste har fått en klart større økning i muskelmasse ved MSP enn SSP. Vi kan også se at for noen deltakere er det relativt liten forskjell i protokollene og for noen er det faktisk en klart mindre økning i muskelmasse ved MSP enn SSP.
 
 ```{r}
 #| echo: false
@@ -208,7 +212,7 @@ dat %>%
 
 ```
 
-Forskjell på økning av muskelmasse etter intervensjon mellom singel og multiple sets
+
 
 ### Maksimal styrke
 
@@ -301,7 +305,7 @@ strength.test.results <- paste0(estimate2,
 
 ```
 
-Den gjennomsnitlige forskjellen i muskelstyrkeendring i beinpress mellom sett-protokollene var `r strength.test.results`
+Vi kan se en liknende tendens da det gjelder muskelstyrke. Den gjennomsnitlige forskjellen i muskelstyrkeendring i beinpress mellom sett-protokollene var `r strength.test.results` (95 % konfidensintervall). Også her er det i gjennomsnitt en større økning av 1RM ved MSP enn SSP. Men da vi ser på @fig-strength-test kan vi også her se at resultatene varierer hostetakerne. Her er det færre som har en klar fordel av MSP selv om det er en tendens til det. Også her kan vi se at det er noen som opplever en større økning ved SSP enn ved MSP. 
 
 ```{r}
 #| echo: false
