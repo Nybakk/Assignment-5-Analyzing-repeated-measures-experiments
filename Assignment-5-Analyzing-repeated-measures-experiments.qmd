@@ -338,3 +338,17 @@ str_plot
 ## Diskusjon
 
 tolke resultat og data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
